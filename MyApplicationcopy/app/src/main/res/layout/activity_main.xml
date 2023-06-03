@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:theme="@style/ThemeOverlay.Material3.BottomAppBar" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/appBarLayout">
+
+        <TextView
+                android:text="Информация о курьере"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="20sp"
+                android:textStyle="bold"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/nameDel"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/ordersCount"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/totalIncomes"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="67dp">
+
+        <TextView android:layout_width="70dp" android:padding="2dp" android:textAlignment="center"
+                  android:gravity="center" android:background="@drawable/back" android:layout_margin="5dp"
+                  android:layout_height="match_parent"
+                  android:text="Название фирмы"/>
+        <TextView android:layout_width="70dp" android:padding="2dp" android:textAlignment="center"
+                  android:gravity="center" android:background="@drawable/back" android:layout_margin="5dp"
+                  android:layout_height="match_parent"
+                  android:text="Тип посылки"/>
+        <TextView android:layout_width="70dp" android:padding="2dp" android:textAlignment="center"
+                  android:gravity="center" android:background="@drawable/back" android:layout_margin="5dp"
+                  android:layout_height="match_parent"
+                  android:text="Адрес отправителя"/>
+        <TextView android:layout_width="70dp" android:padding="2dp" android:textAlignment="center"
+                  android:gravity="center" android:background="@drawable/back" android:layout_margin="5dp"
+                  android:layout_height="match_parent"
+                  android:text="Адрес получателя"/>
+
+        <Button android:layout_width="70dp" android:padding="2dp" android:textAlignment="center"
+            android:gravity="center" android:background="@drawable/back" android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            android:text="Цена" android:onClick="SortPriceClick"/>
+
+    </LinearLayout>
+
+    <ListView android:layout_weight="300"
+              android:layout_width="match_parent"
+              android:layout_height="529dp" android:id="@+id/list" app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="parent">
+    </ListView>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight="1">
+        <Button android:text="Отмена" android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:layout_weight="1" android:id="@+id/denyButton" android:onClick="DenyClick"/>
+        <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1"
+                android:text="Принять" android:id="@+id/acceptButton" android:onClick="AcceptClick"/>
+    </LinearLayout>
+</LinearLayout>
